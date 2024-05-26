@@ -6,6 +6,7 @@ html {
 } */
 
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 * {
   box-sizing: border-box;
 }
@@ -28,7 +29,9 @@ hr {
 ul {
   padding-left: 0;
   list-style: none;
+  
 }
+
 button,
 input {
   font-family: inherit;

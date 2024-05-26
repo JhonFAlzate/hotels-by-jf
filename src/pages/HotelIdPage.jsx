@@ -5,6 +5,7 @@ import 'boxicons'
 import OtherHotels from "../components/HotelIdPage/OtherHotels"
 import '../components/styles/HotelIdPage.css'
 import MapHotel from "../components/HotelIdPage/MapHotel"
+import FormReservation from "../components/HotelIdPage/FormReservation"
 
 
 const HotelIdPage = () => {
@@ -20,7 +21,7 @@ const HotelIdPage = () => {
     },[id])
 
   return (
-    <section className="hpage_container">
+    <article className="hpage_container">
         <h2 className="hpage_title">{hotel?.name}</h2>
         <div className="aquí van las estrellas, con box icon">
             <i className="bx bxs-star"></i>
@@ -62,13 +63,19 @@ const HotelIdPage = () => {
         </div>
 
         <div className="hpage_otherHotels">
+            <section>
+                <FormReservation 
+                hotelId = {id}
+                />
+            </section>
+
             <OtherHotels 
             city={hotel?.city}
             id = {id}
             />
         </div>
 
-    </section>
+    </article>
   )
 }
 
