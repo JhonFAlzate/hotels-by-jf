@@ -17,8 +17,8 @@
 .hpage_img_map_container {
     width: 90%;
     display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
-    align-content: center;
     align-items: center;
     flex-wrap: wrap;
  
@@ -89,7 +89,7 @@
 
 
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 740px) {
 
     .hpage_img_map_container {
     width: 98%;
