@@ -38,7 +38,7 @@ const HotelIdPage = () => {
         <div className="hpage_img_map_container">
             
             
-            <SliderImgs hotel={hotel}/>
+            <SliderImgs hotel={hotel}/> 
 
            <div className="hpage_div_map">
             {

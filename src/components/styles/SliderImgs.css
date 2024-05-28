@@ -47,3 +47,18 @@
     height: 100%;
     object-fit: contain;
 }
+
+@media screen and (max-width: 350px) {
+
+    .slider {
+     
+        width: 100%; 
+
+       
+    }
+    .slider_btn {
+       
+        width: 2em;
+      
+    }
+}
