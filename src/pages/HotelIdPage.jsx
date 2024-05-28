@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import useFetch from "../hooks/useFetch"
 import { useEffect } from "react"
 import 'boxicons'
@@ -6,6 +6,7 @@ import OtherHotels from "../components/HotelIdPage/OtherHotels"
 import '../components/styles/HotelIdPage.css'
 import MapHotel from "../components/HotelIdPage/MapHotel"
 import FormReservation from "../components/HotelIdPage/FormReservation"
+import SliderImgs from "../components/HotelIdPage/SliderImgs"
 
 
 const HotelIdPage = () => {
@@ -24,18 +25,21 @@ const HotelIdPage = () => {
     <article className="hpage_container">
         <h2 className="hpage_title">{hotel?.name}</h2>
         <div className="aquí van las estrellas, con box icon">
+          
             <i className="bx bxs-star"></i>
             <i className="bx bxs-star"></i>
             <i className="bx bxs-star"></i>
             <i className="bx bxs-star-half"></i>
             <i className="bx bx-star"></i>
+            
            <span>{hotel?.rating}</span>
         </div>
 
         <div className="hpage_img_map_container">
             
             
-            <img className="hpage_img" src={hotel?.images[0].url} alt="" />
+            <SliderImgs hotel={hotel}/>
+
            <div className="hpage_div_map">
             {
                 hotel && (
@@ -64,9 +68,17 @@ const HotelIdPage = () => {
 
         <div className="hpage_otherHotels">
             <section>
-                <FormReservation 
-                hotelId = {id}
-                />
+            {
+                localStorage.getItem('token')
+                ? (
+                    <FormReservation 
+                    hotelId = {id}
+                    />
+
+                )
+                :  <p> If you want to make reservation, please <Link to='/Login'> Login</Link></p>
+            }
+
             </section>
 
             <OtherHotels 
@@ -74,7 +86,7 @@ const HotelIdPage = () => {
             id = {id}
             />
         </div>
-
+ 
     </article>
   )
 }

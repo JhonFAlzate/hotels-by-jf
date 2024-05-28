@@ -16,7 +16,7 @@
 
 }
 .header_title {
- margin-left: 2em;   
+ margin-left: 1em;   
  transition: transform 100ms ease;
     
     &:hover {
