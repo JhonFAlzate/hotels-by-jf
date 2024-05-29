@@ -33,10 +33,17 @@ const LoginPage = () => {
 
      }, [])
 
+     const handleDeleteLocalStore = () => {
+      
+        localStorage.removeItem('token')
+        localStorage.removeItem('userLogged')
+
+     }
+
      /* Éso lo hice con ayuda del ChapGpt */
 
   return (
-    <section>
+    <section className="login_container_phader">
     {
 
       localStorage.getItem('token')
@@ -49,7 +56,7 @@ const LoginPage = () => {
        
         <h3 className="login_user_name"><span>Welcome,</span><span className="login_user_name_data">{user.firstName} {user.lastName}</span></h3>
 
-        <button className="login_user_btn">Logout</button>
+        <button onClick={handleDeleteLocalStore} className="login_user_btn">Logout</button>
      </div> 
      )
 
