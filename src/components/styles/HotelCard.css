@@ -1,26 +1,18 @@
 .hcard_article {
     width: 100%;
-    max-width: 18em;
-    margin-top: 2em;
+    max-width: 16em;
     border-radius: 1em;
     border: solid rgba(115, 113, 113, 0.067);
     border: none;
-    overflow: hidden;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     gap: 2em;
     align-items: center;
-    margin-top: 8em;
-   
-  
-   
-    /* box-shadow: -1em -1em 3em 0em rgba(0, 0, 0, 0.2); */
-    box-shadow:
-    inset 0 -3em 3em rgba(246, 243, 243, 0.1),
-    0 0 0 2px rgb(255, 255, 255),
-    0.8em 0.6em 1em rgba(68, 67, 67, 0.5);
+    margin-top: 2.5em;
+    overflow: hidden;
+    box-shadow: 1em 1em 1.1em 0em rgba(0, 0, 0, 0.3);
     
     transition: transform 100ms ease;
     
@@ -30,9 +22,9 @@
     }
 }
 .hcard_header {
-    width: 100%;  
-}
-.hcard_img {   
+    width: 100%;
+ }
+.hicard_img {   
     width: 100%;
 }
 .hcard_section {

@@ -13,7 +13,7 @@ const HotelCard = ({hotel}) => {
 
     <article className='hcard_article'>
         <header className='hcard_header'>
-            <img className='hcard_img' src={hotel.images[0].url} alt="" />
+            <img className='hicard_img' src={hotel.images[0].url} alt="" /> 
         </header>
             
         <section className='hcard_section'>

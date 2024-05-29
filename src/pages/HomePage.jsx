@@ -1,28 +1,70 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getHotelsThunk } from "../store/slices/products.slice"
 import HotelCard from "../components/HomePage/HotelCard"
 import '../components/styles/HomePage.css'
+import FilterName from "../components/HomePage/FilterName"
+import FilterCity from "../components/HomePage/FilterCity"
+import FilterPrice from "../components/HomePage/FilterPrice"
 
 const HomePage = () => {
    const products = useSelector(states => states.products)
    const dispatch = useDispatch()
+   const [nameSearched, setNameSearched] = useState('')
+   const [fromTo, setFromTo] = useState({
+    from:0,
+    to:Infinity
+   })
 
    useEffect(() => {
     const url = 'https://hotels-api.academlo.tech/hotels'
     dispatch(getHotelsThunk(url))
    },[])
 
+   const cbFilter = (hotel) => {  
+    //filter by name
+      const filterName = hotel.name.toLowerCase().includes(nameSearched)
+      //filter by price
+      const price = Number(hotel.price)
+      const filterByPrice = price >=  fromTo.from && price <= fromTo.to
+
+      return filterName && filterByPrice
+
+   }
+
+
   return (
-    <div className="hpage_container_card">
-        {
-        products?.map(hotel => (
-            <HotelCard 
-            key={hotel.id}
-            hotel={hotel}
+    <div className="homePage_container">
+
+      <section className="homepage_hotelcard_filteres">
+        <h3 className="homePage_title_filter">Filters</h3>
+        <FilterPrice 
+        setFromTo = {setFromTo}
+        />
+        <FilterCity 
+        setFromTo = {setFromTo}
+        setNameSearched = {setNameSearched}
+        />
+      </section>
+
+      <div className="homePage_2col">
+
+            <FilterName 
+              setNameSearched = {setNameSearched}
             />
-        ) ) 
-        }
+
+            <div className="homePage_container_card">         
+                  {
+                    products?.filter(cbFilter).map(hotel => (
+                      <HotelCard 
+                      key={hotel.id}
+                      hotel={hotel}
+                      />
+                      ) ) 
+                    }
+          
+              </div>
+        </div>
     </div>
   )
 }

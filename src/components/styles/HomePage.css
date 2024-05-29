@@ -1,10 +1,37 @@
-.hpage_container_card {
+.homePage_container {
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1.1fr 4fr; 
     flex-wrap: wrap;
-    gap: 3em;
-    justify-content: center;
-    margin-top: 8em;    
-  
+    
+     
 }
-   
+.homepage_hotelcard_filteres {
+    width: 20em;
+    margin-top: 9em;
+    margin-left: 2em;
+}
+.homePage_title_filter {
+    font-size: 1.3em;
+}
+.homePage_2col {
+    margin-top: 9em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+ 
+
+}
+.homePage_container_card {
+ 
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+
+}

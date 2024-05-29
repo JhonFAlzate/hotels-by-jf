@@ -20,3 +20,4 @@ export const getHotelsThunk = (url) => (dispatch) => {
         .then(res => dispatch(setProducts(res.data)))
         .catch(err => console.log(err))
 }
+ 

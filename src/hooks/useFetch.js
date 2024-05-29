@@ -17,4 +17,4 @@ const useFetch = () => {
 return [response, getApi ]
 }
 
-export default useFetch
+export default useFetch 
