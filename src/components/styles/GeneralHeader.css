@@ -17,11 +17,11 @@
 }
 .header_title {
  margin-left: 1em;   
+
  transition: transform 100ms ease;
     
     &:hover {
         transform: scale(1.2);
-
     }
  
 
@@ -48,4 +48,75 @@
         transform: scale(1.2);
 
     }
+}
+
+li {
+    margin: 15px;
+    color: white;
+    position: relative;
+    text-decoration: none;
+}
+a {
+    color: black;
+}
+
+.nv_toggle{
+    display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .header_ul {
+      
+       position: absolute;
+       top: 5em;
+       left: 0.1em;
+       background-color: gray;
+       border-radius: 0.5em;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       transform: translateX(-100%);
+       transition: 0.4s ease all;
+       height: 15em;
+       
+    }  
+    .header_ul.open {
+        transform: translateX(0);
+    }
+    .nv_toggle {
+        position: absolute;
+        top: 1.5em;
+        left: 15em;
+        display: block;
+        display: flex ;
+        flex-direction: column;
+     
+    }
+
+    .nv_toggle span{
+        width: 30px;
+        height: 4px;
+        background-color: rgb(233, 9, 9);
+        margin-bottom: 5px;
+        border-radius: 2px;
+        transform-origin: 5px 0px;
+        transition: all 0.2s linear;
+    }
+    .nv_toggle.open > span {
+        transform:rotate(45deg) translate(0px, 0px);
+    }
+    .nv_toggle.open > span:nth-child(2){
+        display: none;
+    }
+    .nv_toggle.open > span:nth-child(3){
+        transform: rotate(-45deg) translate(-5px, 1px);
+    }
+    a {
+        color: white;
+        padding: 0.5em;
+      
+    }
+
 }

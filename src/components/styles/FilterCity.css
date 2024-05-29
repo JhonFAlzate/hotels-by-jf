@@ -1,6 +1,6 @@
 .filterCity_container {
-    
     width: 55%;
+     color: black;
 }
 .filterCity_title {
     font-weight: 300;
@@ -10,16 +10,19 @@
 .filterCity_ul {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 0.1em;
     font-weight: 200;
     font-size: 0.84em;
+    color: black;
 }
 .filterCity_li {
     /* transition: transform 100ms ease; */
     padding-left: 1em;
+    color: black;
+    cursor: pointer;
     
     &:hover {
-        transform: scale(1.03);
+        
         background-color: rgb(248, 98, 98);
         height: 2em;
         color: white;
@@ -29,4 +32,17 @@
 
 
     }
+}
+
+@media screen and (max-width: 768px) {
+    .filterCity_container {
+        width: 100%;
+         color: rgb(206, 16, 16);
+
+    }
+
+.filterCity_ul {
+    gap: -0em;
+}
+
 }

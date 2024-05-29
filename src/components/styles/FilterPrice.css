@@ -67,3 +67,29 @@
 
     }
 }
+
+
+@media screen and (max-width: 768px) {
+
+    .filterPrice_container {
+        align-items: center;
+       
+    }
+    
+    .filterPrice_form_c {
+        width: 80%;
+    }
+    .filterPrice_title {
+     font-weight: 300;   
+     
+    }
+    .filterPrice_formulario {
+        gap: 0.5em;
+       
+    }
+    .filterPrice_label {
+        gap: 0.1em;
+    }
+    
+
+}

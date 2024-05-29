@@ -15,6 +15,7 @@ const HomePage = () => {
     from:0,
     to:Infinity
    })
+   const [isOpen, setIsOpen] = useState(false)
 
    useEffect(() => {
     const url = 'https://hotels-api.academlo.tech/hotels'
@@ -36,7 +37,8 @@ const HomePage = () => {
   return (
     <div className="homePage_container">
 
-      <section className="homepage_hotelcard_filteres">
+      <section className={`homepage_hotelcard_filteres ${isOpen && "open"}`}>
+        <div className="homePage_x" onClick={() => setIsOpen(!isOpen)}> ❌ </div>
         <h3 className="homePage_title_filter">Filters</h3>
         <FilterPrice 
         setFromTo = {setFromTo}
@@ -48,10 +50,16 @@ const HomePage = () => {
       </section>
 
       <div className="homePage_2col">
+          <div className="homePage_cabecera">
+
 
             <FilterName 
               setNameSearched = {setNameSearched}
             />
+           <img className="homepage_imgFilter" src="/filtrar.png" alt="" onClick={() => setIsOpen(!isOpen)} />
+
+          </div>
+
 
             <div className="homePage_container_card">         
                   {
