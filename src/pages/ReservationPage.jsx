@@ -9,8 +9,9 @@ import FormRating from "../components/ReservationsPage/FormRating"
 const ReservationPage = () => {
 
     const [reservations, getRservations, ,deleteReservation] = useCrud()
-
     const [bookSelected, setBookSelected] = useState()
+
+    const [formIsOpen, setFormIsOpen ] = useState(false)
 
 useEffect( () => {
     const url = 'https://hotels-api.academlo.tech/bookings'
@@ -27,6 +28,8 @@ useEffect( () => {
       <FormRating
       bookSelected = {bookSelected}
       setBookSelected = {setBookSelected}
+      formIsOpen = {formIsOpen}
+      setFormIsOpen = {setFormIsOpen}
       />
   
 
@@ -40,6 +43,7 @@ useEffect( () => {
                 book = {book}
                 deleteReservation = {deleteReservation}
                 setBookSelected = {setBookSelected}
+                setFormIsOpen = {setFormIsOpen}
              />   
             ))
         }

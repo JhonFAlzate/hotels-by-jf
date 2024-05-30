@@ -2,13 +2,14 @@ import { useForm } from "react-hook-form";
 import useCrud from "../../hooks/useCrud";
 import '../styles/FormRating.css'
 
-const FormRating = ({bookSelected, setBookSelected }) => {
+
+const FormRating = ({bookSelected, setBookSelected, formIsOpen, setFormIsOpen}) => {
 
     const{handleSubmit, reset, register} =  useForm()
 
     const [ , , createReview] = useCrud()
 
-    const submit = data => {
+        const submit = data => {
         const url = 'https://hotels-api.academlo.tech/reviews'
 
         const bodyData = {
@@ -22,6 +23,7 @@ const FormRating = ({bookSelected, setBookSelected }) => {
             comment: ''
         })
         setBookSelected()
+        setFormIsOpen(false)
     }
     const initialDate = (new Date(bookSelected?.checkIn)).getTime()
     const finalDate = (new Date(bookSelected?.checkOut)).getTime()
@@ -29,13 +31,22 @@ const FormRating = ({bookSelected, setBookSelected }) => {
     const reservationDays = (finalDate-initialDate)/((1000 * 60 * 60 * 24))
 
 console.log (bookSelected)
-  return (
 
-    <div className="rating_container">
+const handleExit = () => {
+    setFormIsOpen(false)
+}
+
+  return ( 
+
+    <div className={`rating_container ${formIsOpen || 'rating_close'}`}>
+
         <article className="rating_article">
-            <span className="rating_x">❌</span>
+
+            <span className="rating_x" onClick={handleExit}>❌</span>
             <h3 className="rating_title">reserve</h3>
+
             <section className="rating_container_img_namehotel">
+
                 <img className="rating_img" src={bookSelected?.hotel.images[0].url} alt="" />
                   <h4 className="rating_namehotel">{bookSelected?.hotel.name}</h4>
 
@@ -43,7 +54,6 @@ console.log (bookSelected)
                    <li className="rating_li_item"> {bookSelected?.hotel.city.name}, {bookSelected?.hotel.city.country}</li>
                    <li  className="rating_li_item">Reservation Days {reservationDays} </li>
                    <li className="rating_li_item">subtotal Price $ {reservationDays * Number(bookSelected?.hotel.price)}</li>
-
                 </ul>
 
             </section>

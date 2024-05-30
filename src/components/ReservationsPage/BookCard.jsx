@@ -1,6 +1,6 @@
 import '../styles/BookCard.css'
 
-const BookCard = ({book, deleteReservation, setBookSelected}) => {
+const BookCard = ({book, deleteReservation, setBookSelected, setFormIsOpen}) => {
 
   const initialDate = (new Date(book.checkIn)).getTime()
   const finalDate = (new Date(book.checkOut)).getTime()
@@ -18,6 +18,7 @@ const BookCard = ({book, deleteReservation, setBookSelected}) => {
   
   const handleRate = () => {
     setBookSelected(book)
+    setFormIsOpen(true)
 
   }
     return (
