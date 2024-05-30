@@ -11,6 +11,10 @@
 }
 .hpage_title {
     text-align: center;
+
+}
+.hpag_rating {
+    display: flex;
 }
 .hpage_img_map_container {
     width: 90%;

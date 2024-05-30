@@ -8,9 +8,10 @@ import MapHotel from "../components/HotelIdPage/MapHotel"
 import FormReservation from "../components/HotelIdPage/FormReservation"
 import SliderImgs from "../components/HotelIdPage/SliderImgs"
 import Reviews from "../components/HotelIdPage/Reviews"
+import GenerateStart from "../components/Shared/GenerateStart"
 
 
-
+ 
 const HotelIdPage = () => {
 
     const {id} = useParams()
@@ -22,19 +23,18 @@ const HotelIdPage = () => {
       getHotel(url)
 
     },[id])
+    
     console.log (hotel)
+   
 
   return (
     <article className="hpage_container">
         <h2 className="hpage_title">{hotel?.name}</h2>
-        <div className="aquí van las estrellas, con box icon">
-          
-            <i className="bx bxs-star"></i>
-            <i className="bx bxs-star"></i>
-            <i className="bx bxs-star"></i>
-            <i className="bx bxs-star-half"></i>
-            <i className="bx bx-star"></i>
-            
+        <div className="hpag_rating">
+
+            <GenerateStart 
+            rating = {hotel?.rating}
+            />            
            <span>{hotel?.rating}</span>
         </div>
 
