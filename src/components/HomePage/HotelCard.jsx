@@ -19,7 +19,7 @@ const HotelCard = ({hotel}) => {
         <section className='hcard_section'>
             <h3 className='hcard_title'>{hotel.name}</h3>
             <div className='hcard_rating'>⭐⭐⭐⭐ {hotel.rating}</div>
-            {/* <div className='hcard_star'>estrellas, según el raiting...traer iconos</div> */}
+           
             <div className='hcard_city'>{hotel.city.name}, {hotel.city.country}</div>
             <div className='hcard_price'>$ {hotel.price}</div>
         </section>

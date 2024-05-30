@@ -112,7 +112,11 @@
         font-size: 0.8em;
     }
     .book_comment {
-        font-size: 0.9em;   
+        font-size: 0.9em;  
+        cursor: pointer; 
+        &:hover{
+            text-decoration: underline;
+        }
     }
 
     .book_container_btn {

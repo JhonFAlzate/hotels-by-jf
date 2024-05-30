@@ -1,6 +1,6 @@
 import '../styles/BookCard.css'
 
-const BookCard = ({book, deleteReservation}) => {
+const BookCard = ({book, deleteReservation, setBookSelected}) => {
 
   const initialDate = (new Date(book.checkIn)).getTime()
   const finalDate = (new Date(book.checkOut)).getTime()
@@ -16,6 +16,10 @@ const BookCard = ({book, deleteReservation}) => {
 
   }
   
+  const handleRate = () => {
+    setBookSelected(book)
+
+  }
     return (
     
       <section className="book_container">
@@ -28,7 +32,7 @@ const BookCard = ({book, deleteReservation}) => {
 
               <div className="book_city_country">{book.hotel.city.name}, {book.hotel.city.country}</div>
 
-              <p className="book_comment">Rate and comment this visit... ¡CLICK HERE!</p>
+              <p className="book_comment" onClick={handleRate}>Rate and comment this visit... ¡CLICK HERE!</p>
          </div>
 
           <ul className="book_ul">
