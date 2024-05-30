@@ -67,6 +67,7 @@ a {
 
 @media screen and (max-width: 768px) {
 
+
     .header_ul {
       
        position: absolute;
@@ -82,15 +83,19 @@ a {
        height: 15em;
        
     }  
+    .header_title {
+       
+        margin-left: 0.1em;
+   
+    }
     .header_ul.open {
         transform: translateX(0);
     }
     .nv_toggle {
         position: absolute;
-        top: 1.5em;
-        left: 15em;
-        display: block;
-        display: flex ;
+        top: 1.8em;
+        left: 17em;
+         display: flex ;
         flex-direction: column;
      
     }
@@ -114,7 +119,7 @@ a {
         transform: rotate(-45deg) translate(-5px, 1px);
     }
     a {
-        color: white;
+        color: rgb(19, 19, 19);
         padding: 0.5em;
       
     }
