@@ -13,7 +13,7 @@ useEffect( () => {
     getHotelByCity(url)
 }
 
-}, [city])
+}, [city]) 
 
   return (
     <section className='oh_container'>

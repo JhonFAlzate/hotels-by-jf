@@ -7,6 +7,8 @@ import '../components/styles/HotelIdPage.css'
 import MapHotel from "../components/HotelIdPage/MapHotel"
 import FormReservation from "../components/HotelIdPage/FormReservation"
 import SliderImgs from "../components/HotelIdPage/SliderImgs"
+import Reviews from "../components/HotelIdPage/Reviews"
+
 
 
 const HotelIdPage = () => {
@@ -20,6 +22,7 @@ const HotelIdPage = () => {
       getHotel(url)
 
     },[id])
+    console.log (hotel)
 
   return (
     <article className="hpage_container">
@@ -80,6 +83,11 @@ const HotelIdPage = () => {
             }
 
             </section>
+            <div>
+              <Reviews 
+                hotelId = {id}
+              />
+            </div>
 
             <OtherHotels 
             city={hotel?.city}
