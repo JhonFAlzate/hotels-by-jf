@@ -1,8 +1,6 @@
 .hpage_container {
     width: 100%;
-    margin-top: 2em;
-   
-    overflow: hidden;
+     overflow: hidden;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -90,9 +88,12 @@
 
 
 @media screen and (max-width: 740px) {
+    .hpage_container {
+        width: 100%;
+    }
 
     .hpage_img_map_container {
-    width: 98%;
+    width: 90%;
     margin: 1em;
     display: flex;
     flex-direction: column;

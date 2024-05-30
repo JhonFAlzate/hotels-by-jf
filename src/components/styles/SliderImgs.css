@@ -48,7 +48,7 @@
     object-fit: contain;
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 450px) {
 
     .slider {
      
@@ -59,6 +59,7 @@
     .slider_btn {
        
         width: 2em;
+        
       
     }
 }

@@ -38,7 +38,7 @@ const BookCard = ({book, deleteReservation, setBookSelected, setFormIsOpen}) => 
 
           <ul className="book_ul">
               <li className="book_item"><span className="book_label">Reservations Days </span><span className="book_container_value">{reservationDays}</span></li>
-              <li className="book_item"><span className="book_abel">Subtotal Price </span><span className="book_container_value">USD$ {reservationDays * Number(book.hotel.price)}</span></li>
+              <li className="book_item"><span className="book_label">Subtotal Price </span><span className="book_container_value">USD$ {reservationDays * Number(book.hotel.price)}</span></li>
           </ul>
           </div>
           <button className="book_container_btn" onClick={handleDeleted} ><i className='bx bx-trash'></i></button>
